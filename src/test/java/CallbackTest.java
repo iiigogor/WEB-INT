@@ -15,14 +15,14 @@ public class CallbackTest {
     void shouldTest() {
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1280x1024";
-        Configuration.headless = true;
+        //Configuration.headless = true;
         Configuration.browser = "chrome";
-        Configuration.timeout = 7000;
+        //Configuration.timeout = 7000;
         open("http://localhost:9999/");
         $("[data-test-id=name] input").setValue("Петров Иван");
         $("[data-test-id=phone] input").val("+79123456789");
         $("[data-test-id=agreement]").click();
-        $(byText("Продолж")).click();
+        $(byText("Продолжить")).click();
         $("[data-test-id='order-success']").shouldHave(exactText("  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
 
     }
